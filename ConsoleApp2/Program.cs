@@ -9,20 +9,13 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            //Thread th = Thread.CurrentThread;
-            //th.Name = "MainThread";
-
-            //Console.WriteLine("This is {0}", th.Name);
-            //Console.ReadKey();
-
-            // Define some treads
+            //args thread will be created to run function 1 in parallel.
             Thread obj1 = new Thread(Function1);
-            Thread obj2 = new Thread(Function2);
-
-            //Now invoke threads
+            obj1.IsBackground = true;
             obj1.Start();
-            obj2.Start();
 
+            // the focus of the program will exit here.
+            Console.WriteLine("The main application has exited.");
             Console.ReadLine();
         }
 
@@ -30,18 +23,14 @@ namespace ConsoleApp2
         {
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Value form Function 1 is {0} ", i);
-                Thread.Sleep(4000);
+                Console.WriteLine("Function 1 is entered ....");
+                Console.ReadLine();     // Wait here
+                Console.WriteLine("Function 2 is exited ...."); // This will not now even be 
+                // executed because in the main function, the program started then exited 
+                // as this is now a background task.
             }
         }
 
-        static void Function2()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("Value form Function 2 is {0} ", i);
-                Thread.Sleep(4000);
-            }
-        }
+
     }
 }
