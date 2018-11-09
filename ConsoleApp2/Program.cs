@@ -21,12 +21,18 @@ namespace ConsoleApp2
             Thread proc1 = new Thread(DisplayBoard);
             Thread proc2 = new Thread(TakeInFromUser);
 
+<<<<<<< HEAD
             //DisplayBoard();
             proc1.Start();
             proc2.Start();
 
             // the focus of the program will exit here.
             Console.WriteLine("The main application has exited.");
+=======
+            Function1();
+            Function2();
+
+>>>>>>> parent of ac7a2c4... Cecond Commit, showing Asyncronous processing
 
             //Console.ReadLine();
         }
@@ -36,6 +42,7 @@ namespace ConsoleApp2
 
             for(int row = 0; row < BoardDisplay.GetLength(0); row++)
             {
+<<<<<<< HEAD
                 for( int col = 0; col < BoardDisplay.GetLength(1); col++)
                 {
                     BoardDisplay[row, col] = " ";
@@ -44,6 +51,9 @@ namespace ConsoleApp2
                         BoardDisplay[row, col] = "X";
                     }
                 }
+=======
+                Console.WriteLine("Value form Function 1 is {0} ", i);
+>>>>>>> parent of ac7a2c4... Cecond Commit, showing Asyncronous processing
             }
 
             String active = "x";
@@ -93,6 +103,7 @@ namespace ConsoleApp2
 
             if (userIn.Key == ConsoleKey.RightArrow)
             {
+<<<<<<< HEAD
                 // pressed right
                 if (activeCol == 2)
                 {
@@ -102,6 +113,9 @@ namespace ConsoleApp2
                 {
                     activeCol = activeCol + 1;
                 }
+=======
+                Console.WriteLine("Value form Function 2 is {0} ", i);
+>>>>>>> parent of ac7a2c4... Cecond Commit, showing Asyncronous processing
             }
 
             if (userIn.Key == ConsoleKey.DownArrow)
